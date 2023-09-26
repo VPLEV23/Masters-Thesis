@@ -1,40 +1,46 @@
+@font-face {
+  font-family: "e-Ukraine";
+  src: url("../fonts/e-Ukraine-Regular.otf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "e-Ukraine";
+  src: url("../fonts/e-Ukraine-Bold.otf");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "e-Ukraine";
+  src: url("../fonts/e-Ukraine-Light.otf");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "e-Ukraine";
+  src: url("../fonts/e-Ukraine-Medium.otf");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "e-Ukraine";
+  src: url("../fonts/e-Ukraine-Thin.otf");
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "e-Ukraine";
+  src: url("../fonts/e-Ukraine-UltraLight.otf");
+  font-weight: 100;
+  font-style: normal;
+}
+
+/* Use the e-Ukraine font as the default font for the entire website */
 body {
-  font-family: "Montsserat", sans-serif;
-}
-.reg_from {
-  width: 500px;
-}
-
-.content-section {
-  background-color: #ffffff;
-  padding: 25px 150px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.form-control-label {
-  display: block;
-  margin-bottom: 5px;
-}
-
-.form-control {
-  width: 95%;
-  padding: 10px;
-  margin-bottom: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-
-.btn {
-  padding: 10px 15px;
-  background-color: #007bff;
-  border: none;
-  color: #fff;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.btn:hover {
-  background-color: #0056b3;
+  font-family: "e-Ukraine", sans-serif !important;
 }

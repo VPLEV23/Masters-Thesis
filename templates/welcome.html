@@ -1,21 +1,27 @@
 {% extends "base.html" %} {% block content %}
 <div
-  class="w-full h-screen flex flex-col items-center justify-center bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500"
+  class="w-full h-screen flex flex-col items-center justify-center bg-gradient-to-r from-blue-400 via-purple-500 to-pink-600"
 >
-  <h1 class="text-4xl font-bold mb-4 text-white">
+  <h1 class="text-5xl font-extrabold mb-8 text-white tracking-tighter">
     Welcome to My Recommendation System
   </h1>
+
   <div>
     <a
       href="{{ url_for('login') }}"
-      class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded m-2"
-      >Login</a
+      class="bg-blue-500 text-white font-light font-400 py-3 px-8 rounded-lg m-3 text-2xl shadow-md transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-105"
+      style="background-image: linear-gradient(315deg, #3a1c71 0%, #d76d77 74%)"
     >
+      Login
+    </a>
+
     <a
       href="{{ url_for('register') }}"
-      class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded m-2"
-      >Register</a
+      class="bg-gray-500 text-white font-light py-3 px-8 rounded-lg m-3 text-2xl shadow-md transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110"
+      style="background-image: linear-gradient(315deg, #3a1c71 0%, #d76d77 74%)"
     >
+      Register
+    </a>
   </div>
 </div>
 {% endblock %}
