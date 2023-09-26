@@ -1,0 +1,15 @@
+<!-- templates/base.html -->
+<html>
+  <head>
+    <title>Your App Name</title>
+    <!-- Add links to your CSS here -->
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/styles.css') }}"
+    />
+  </head>
+  <body>
+    <!-- This is where the content from child templates will be injected -->
+    {% block content %}{% endblock %}
+  </body>
+</html>
