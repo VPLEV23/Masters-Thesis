@@ -1,0 +1,21 @@
+{% extends "base.html" %} {% block content %}
+<div
+  class="w-full h-screen flex flex-col items-center justify-center bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500"
+>
+  <h1 class="text-4xl font-bold mb-4 text-white">
+    Welcome to My Recommendation System
+  </h1>
+  <div>
+    <a
+      href="{{ url_for('login') }}"
+      class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded m-2"
+      >Login</a
+    >
+    <a
+      href="{{ url_for('register') }}"
+      class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded m-2"
+      >Register</a
+    >
+  </div>
+</div>
+{% endblock %}

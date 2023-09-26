@@ -1,36 +1,43 @@
-<!-- templates/register.htmll -->
 {% extends "base.html" %} {% block content %}
-<div class="content-section">
-  <form method="POST" action="" class="reg_from">
-    {{ form.hidden_tag() }}
-    <fieldset class="form-group">
-      <legend class="border-bottom mb-4">Join Today</legend>
-      <div class="form-group">
-        {{ form.username.label(class="form-control-label") }} {{
-        form.username(class="form-control form-control-lg") }}
+<div class="min-h-screen flex items-center justify-center bg-gray-100">
+  <div class="bg-white p-8 rounded-lg shadow-md w-96">
+    <form method="POST" action="">
+      {{ form.hidden_tag() }}
+      <div class="text-2xl font-bold mb-6 text-center">Join Today</div>
+
+      <div class="mb-4">
+        {{ form.username.label(class="block text-sm font-medium text-gray-700")
+        }} {{ form.username(class="mt-1 p-2 w-full border rounded-md") }}
       </div>
-      <div class="form-group">
-        {{ form.email.label(class="form-control-label") }} {{
-        form.email(class="form-control form-control-lg") }}
+
+      <div class="mb-4">
+        {{ form.email.label(class="block text-sm font-medium text-gray-700") }}
+        {{ form.email(class="mt-1 p-2 w-full border rounded-md") }}
       </div>
-      <div class="form-group">
-        {{ form.password.label(class="form-control-label") }} {{
-        form.password(class="form-control form-control-lg") }}
+
+      <div class="mb-4">
+        {{ form.password.label(class="block text-sm font-medium text-gray-700")
+        }} {{ form.password(class="mt-1 p-2 w-full border rounded-md") }}
       </div>
-      <div class="form-group">
-        {{ form.confirm_password.label(class="form-control-label") }} {{
-        form.confirm_password(class="form-control form-control-lg") }}
+
+      <div class="mb-6">
+        {{ form.confirm_password.label(class="block text-sm font-medium
+        text-gray-700") }} {{ form.confirm_password(class="mt-1 p-2 w-full
+        border rounded-md") }}
       </div>
-    </fieldset>
-    <div class="form-group">
-      {{ form.submit(class="btn btn-outline-info") }}
+
+      <div>
+        {{ form.submit(class="w-full bg-blue-500 text-white p-2 rounded
+        hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400
+        focus:ring-opacity-50") }}
+      </div>
+    </form>
+    <div class="mt-4 text-center">
+      <span class="text-sm text-gray-600">Already have an account?</span>
+      <a href="{{ url_for('login') }}" class="text-blue-500 ml-2 text-sm"
+        >Sign In</a
+      >
     </div>
-  </form>
-  <div class="border-top pt-3">
-    <small class="text-muted">
-      Already have an account?
-      <a class="ml-2" href="{{ url_for('login') }}">Sign In</a>
-    </small>
   </div>
 </div>
 {% endblock content %}

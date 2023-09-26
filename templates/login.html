@@ -1,30 +1,37 @@
 {% extends "base.html" %} {% block content %}
-<div class="content-section">
-  <form method="POST" action="">
-    {{ form.hidden_tag() }}
-    <fieldset class="form-group">
-      <legend class="border-bottom mb-4">Log In</legend>
-      <div class="form-group">
-        {{ form.email.label(class="form-control-label") }} {{
-        form.email(class="form-control form-control-lg") }}
+<div class="min-h-screen flex items-center justify-center bg-gray-100">
+  <div class="bg-white p-8 rounded-lg shadow-md w-96">
+    <form method="POST" action="">
+      {{ form.hidden_tag() }}
+      <div class="text-2xl font-bold mb-6 text-center">Log In</div>
+
+      <div class="mb-4">
+        {{ form.email.label(class="block text-sm font-medium text-gray-700") }}
+        {{ form.email(class="mt-1 p-2 w-full border rounded-md") }}
       </div>
-      <div class="form-group">
-        {{ form.password.label(class="form-control-label") }} {{
-        form.password(class="form-control form-control-lg") }}
+
+      <div class="mb-4">
+        {{ form.password.label(class="block text-sm font-medium text-gray-700")
+        }} {{ form.password(class="mt-1 p-2 w-full border rounded-md") }}
       </div>
-      <div class="form-group">
-        {{ form.remember.label }} {{ form.remember }}
+
+      <div class="flex items-center mb-6">
+        {{ form.remember }} {{ form.remember.label(class="ml-2 text-sm
+        text-gray-600") }}
       </div>
-    </fieldset>
-    <div class="form-group">
-      {{ form.submit(class="btn btn-outline-info") }}
+
+      <div>
+        {{ form.submit(class="w-full bg-blue-500 text-white p-2 rounded
+        hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400
+        focus:ring-opacity-50") }}
+      </div>
+    </form>
+    <div class="mt-4 text-center">
+      <span class="text-sm text-gray-600">Need an account?</span>
+      <a href="{{ url_for('register') }}" class="text-blue-500 ml-2 text-sm"
+        >Sign Up</a
+      >
     </div>
-  </form>
-  <div class="border-top pt-3">
-    <small class="text-muted">
-      Need an account?
-      <a class="ml-2" href="{{ url_for('register') }}">Sign Up</a>
-    </small>
   </div>
 </div>
 {% endblock content %}

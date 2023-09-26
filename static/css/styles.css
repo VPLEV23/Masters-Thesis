@@ -1,11 +1,5 @@
 body {
-  font-family: "Arial", sans-serif;
-  background-color: #f4f4f4;
-  margin: 0;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  font-family: "Montsserat", sans-serif;
 }
 .reg_from {
   width: 500px;
@@ -24,7 +18,7 @@ body {
 }
 
 .form-control {
-  width: 100%;
+  width: 95%;
   padding: 10px;
   margin-bottom: 10px;
   border: 1px solid #ccc;
