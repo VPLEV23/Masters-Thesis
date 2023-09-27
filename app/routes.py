@@ -1,10 +1,11 @@
-from flask import render_template, url_for, flash, redirect
+from flask import render_template, url_for, flash, redirect, request
 from app import app, db, login_manager, bcrypt
 from app.forms import RegistrationForm
-from app.models import User
+from app.models import User, Book
 from .models import User
 from flask_login import login_user, current_user,logout_user, login_required
 from app.forms import LoginForm
+
 @app.route('/')
 @app.route('/index')
 def index():
@@ -62,7 +63,9 @@ def logout():
     logout_user()
     return redirect(url_for('index'))
 
-@app.route('/dashboard')
-@login_required
+@app.route('/dashboard', methods=['GET'])
+@login_required  # Assuming you have a login_required decorator
 def dashboard():
-    return render_template('dashboard.html')
+    page = request.args.get('page', 1, type=int)
+    books = Book.query.paginate(page=page, per_page=25)
+    return render_template('dashboard.html', books=books)

@@ -13,8 +13,8 @@ from surprise import KNNWithMeans, Dataset, Reader
 from sklearn.metrics.pairwise import cosine_similarity
 from sklearn.feature_extraction.text import TfidfVectorizer
 
-ratings_df = pd.read_csv('ratings.csv')
-movies_df = pd.read_csv('movies.csv')
+ratings_df = pd.read_csv('./data/Ratings.csv')
+# movies_df = pd.read_csv('movies.csv')
 
 # Drop any unnecessary columns
 # Assuming 'timestamp' column is not needed for the recommendation system
@@ -24,7 +24,7 @@ ratings_df.drop(['timestamp'], axis=1, inplace=True)
 # Check for missing values and handle them
 # For instance, drop rows with missing values
 ratings_df.dropna(inplace=True)
-movies_df.dropna(inplace=True)
+# movies_df.dropna(inplace=True)
 
 
 # Convert data types if necessary
@@ -33,10 +33,10 @@ ratings_df['rating'] = ratings_df['rating'].astype(float)
 
 
 # Quick look at the data
-print("Ratings DataFrame:")
-print(ratings_df.head())
-print("\nMovies DataFrame:")
-print(movies_df.head())
+# print("Ratings DataFrame:")
+# print(ratings_df.head())
+# print("\nMovies DataFrame:")
+# print(movies_df.head())
 
 plt.figure(figsize=(10, 5))
 sns.countplot(x='rating', data=ratings_df)
@@ -54,23 +54,23 @@ plt.ylabel('Frequency')
 plt.show()
 
 
-movie_popularity = ratings_df['movieId'].value_counts()
-plt.figure(figsize=(10, 5))
-sns.histplot(movie_popularity, bins=50)
-plt.title('Movie Popularity')
-plt.xlabel('Number of Ratings for Movie')
-plt.ylabel('Frequency')
-plt.show()
+# movie_popularity = ratings_df['movieId'].value_counts()
+# plt.figure(figsize=(10, 5))
+# sns.histplot(movie_popularity, bins=50)
+# plt.title('Movie Popularity')
+# plt.xlabel('Number of Ratings for Movie')
+# plt.ylabel('Frequency')
+# plt.show()
 
 # Assuming 'genres' column in movies_df is pipe-separated
-all_genres = [genre for sublist in movies_df['genres'].str.split('|').tolist() for genre in sublist]
-genre_df = pd.DataFrame({'genre': all_genres})
-plt.figure(figsize=(15, 7))
-sns.countplot(y='genre', data=genre_df, order=genre_df['genre'].value_counts().index)
-plt.title('Genre Distribution')
-plt.xlabel('Count')
-plt.ylabel('Genre')
-plt.show()
+# all_genres = [genre for sublist in movies_df['genres'].str.split('|').tolist() for genre in sublist]
+# genre_df = pd.DataFrame({'genre': all_genres})
+# plt.figure(figsize=(15, 7))
+# sns.countplot(y='genre', data=genre_df, order=genre_df['genre'].value_counts().index)
+# plt.title('Genre Distribution')
+# plt.xlabel('Count')
+# plt.ylabel('Genre')
+# plt.show()
 
 # Create a 'Reader' to set the rating scale
 reader = Reader(rating_scale=(1, 5))
